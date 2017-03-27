@@ -1,3 +1,5 @@
+<p align="center"><img src="https://cldup.com/pK_lCT4kdh.png" height=80 /></p>
+
 # Agenda API
 
 [![dependencies Status][dep-image]][dep-url] [![dependencies Status][devdep-image]][devdep-url]
