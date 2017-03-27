@@ -1,5 +1,5 @@
-const express = require('express')
-const User = require('./model')
+import express from 'express'
+import User from './model'
 
 const router = express.Router()
 
@@ -20,4 +20,4 @@ router.get('/', async (req, res) => {
   res.status(200).json(users)
 })
 
-module.exports = { router, User }
+export { router, User }

@@ -1,13 +1,14 @@
-const express = require('express')
-const config = require('config')
-const helmet = require('helmet')
-const morgan = require('morgan')
-const mongoose = require('mongoose')
+import express from 'express'
+import config from 'config'
+import helmet from 'helmet'
+import morgan from 'morgan'
+import mongoose from 'mongoose'
+import Promise from 'bluebird'
 
-mongoose.Promise = require('bluebird')
+import router from './router'
+import log from './modules/logger'
 
-const router = require('./router')
-const log = require('./modules/logger')
+mongoose.Promise = Promise
 
 const app = express()
 

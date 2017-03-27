@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+import mongoose from 'mongoose'
+import bcrypt from 'bcrypt'
 
 const SALT_ROUNDS = 10
 
@@ -34,4 +34,4 @@ schema.method('toJSON', function serialize () {
   return obj
 })
 
-module.exports = mongoose.model('User', schema)
+export default mongoose.model('User', schema)
