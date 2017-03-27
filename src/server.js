@@ -6,12 +6,14 @@ const mongoose = require('mongoose')
 
 mongoose.Promise = require('bluebird')
 
+const router = require('./router')
 const log = require('./modules/logger')
 
 const app = express()
 
 app.use(helmet())
 app.use(morgan('tiny', { stream: log.stream }))
+app.use(router)
 
 mongoose.connect(config.get('database.mongodb.uri'))
 
