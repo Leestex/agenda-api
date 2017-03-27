@@ -1,27 +1,10 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
 
-const SALT_ROUNDS = 10
+import schema from './schema'
+import hooks from './hooks'
 
-const schema = mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-    minlength: 6,
-  },
-})
-
-schema.pre('save', async function preSave (next) {
-  if (this.isNew) {
-    this.password = await bcrypt.hash(this.password, SALT_ROUNDS)
-  }
-  next()
-})
+schema.pre('save', hooks.hashPassword)
 
 schema.method('validPassword', function validPassword (password) {
   return bcrypt.compare(password, this.password)
