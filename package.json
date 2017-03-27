@@ -12,7 +12,8 @@
     "build": "rm -rf dist/ && babel src -d dist -s",
     "start": "node ./dist/server.js",
     "dev": "npm run build && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
   },
   "author": "",
   "license": "ISC",
@@ -30,6 +31,7 @@
     "cz-conventional-changelog": "^2.0.0",
     "eslint": "^3.16.1",
     "eslint-config-airbnb-base": "^11.1.0",
-    "eslint-plugin-import": "^2.2.0"
+    "eslint-plugin-import": "^2.2.0",
+    "standard-version": "^4.0.0"
   }
 }
