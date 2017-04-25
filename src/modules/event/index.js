@@ -1,4 +1,2 @@
-import Event from './model'
-import router from './router'
-
-export { router, Event }
+export { default as Event } from './model'
+export { default as router } from './router'
