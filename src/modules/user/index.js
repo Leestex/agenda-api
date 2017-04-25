@@ -1,4 +1,2 @@
-import User from './model'
-import router from './router'
-
-export { router, User }
+export { default as User } from './model'
+export { default as router } from './router'
